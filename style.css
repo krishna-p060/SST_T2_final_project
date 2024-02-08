@@ -43,6 +43,19 @@ ul {
     overflow: hidden;
 }
 
+.big_card{
+    width: 100%;
+    min-height: 100%;
+    box-shadow: 0 0 4px #d4ecff;
+    border-radius: 4px;
+    /* border-radius: 10%; */
+    cursor: pointer;
+    background-color: #fff;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+
 nav {
     background-color: #f3faff;
     box-shadow: 0 0 4px #bbd0e2;

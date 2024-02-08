@@ -7,13 +7,26 @@ function reload() {
 	window.location.reload();
 }
 
+let big_data;
+
 async function fetchNews(query) {
 	const res = await fetch(`${url}${query}&apikey=${API_KEY}`);
 
 	const data = await res.json();
 	console.log(data.articles);
+	// big_data = data.articles.find(article => article.image); // Find the first article with a non-null image
+	big_data = data.articles[5];
+	console.log(big_data);
+	let big_img = document.querySelector(".big_img");
+	let big_title = document.querySelector(".big_title");
+	let big_desc = document.querySelector(".news-desc");
+	
+	big_title.innerHTML = big_data.title;
+	big_img.src = big_data.image;
+	big_desc.innerHTML = big_data.description;
 	bindData(data.articles);
 }
+
 
 function bindData(articles) {
 	const cardsContainer = document.getElementById('cards-container');
